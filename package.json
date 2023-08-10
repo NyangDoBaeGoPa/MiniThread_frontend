@@ -10,6 +10,8 @@
     "test": "jest"
   },
   "dependencies": {
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.3",
     "react": "18.2.0",
@@ -63,5 +65,10 @@
   },
   "engines": {
     "node": ">=16"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
