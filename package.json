@@ -16,7 +16,8 @@
     "husky": "^8.0.3",
     "lint-staged": "^13.2.3",
     "react": "18.2.0",
-    "react-native": "0.72.3"
+    "react-native": "0.72.3",
+    "react-native-splash-screen": "^3.3.0"
   },
   "lint-staged": {
     "*.@(ts|tsx|js|jsx)": [
