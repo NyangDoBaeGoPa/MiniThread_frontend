@@ -11,13 +11,22 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@react-navigation/native": "^6.1.7",
+    "@react-navigation/stack": "^6.3.17",
+    "axios": "^1.4.0",
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
+    "dayjs": "^1.11.9",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.3",
+    "mobx-persist": "^0.4.1",
+    "mobx-react": "^9.0.0",
     "react": "18.2.0",
     "react-native": "0.72.3",
-    "react-native-splash-screen": "^3.3.0"
+    "react-native-mmkv-storage": "^0.9.1",
+    "react-native-restart": "^0.0.27",
+    "react-native-splash-screen": "^3.3.0",
+    "react-native-vector-icons": "^10.0.0"
   },
   "lint-staged": {
     "*.@(ts|tsx|js|jsx)": [
