@@ -11,7 +11,8 @@ interface FocusedInput {
   id: boolean;
   password: boolean;
 }
-const Login = ({navigation}: any) => {
+
+export const Login = ({navigation}: any) => {
   const [id, setId] = useState('');
   const [password, setPassword] = useState('');
   const [focusedInput, setFocusedInput] = useState<FocusedInput | null>(null);
@@ -112,5 +113,3 @@ const Login = ({navigation}: any) => {
     </View>
   );
 };
-
-export default Login;
