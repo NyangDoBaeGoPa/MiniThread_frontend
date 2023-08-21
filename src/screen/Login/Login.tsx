@@ -9,6 +9,7 @@ import {
   Alert,
 } from 'react-native';
 import {Box, Stack} from '@mobily/stacks';
+import {useLoginScreenData} from './login.hook';
 
 interface FocusedInput {
   id: boolean;
@@ -18,6 +19,8 @@ interface FocusedInput {
 export const Login = () => {
   const navigation = useNavigation();
   const route = useRoute();
+
+  const {handleIdInput} = useLoginScreenData();
 
   const [id, setId] = useState('');
   const [password, setPassword] = useState('');
@@ -50,7 +53,7 @@ export const Login = () => {
             value={id}
             onFocus={() => setFocusedInput({id: true, password: false})}
             onBlur={() => setFocusedInput(null)}
-            onChangeText={text => setId(text)}
+            onChangeText={handleIdInput}
             placeholderTextColor="#AAAAAA"
             style={{
               width: 250,
