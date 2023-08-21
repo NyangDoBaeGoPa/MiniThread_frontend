@@ -8,6 +8,8 @@ import {
   View,
   Alert,
 } from 'react-native';
+import {Box, Stack} from '@mobily/stacks';
+
 interface FocusedInput {
   id: boolean;
   password: boolean;
@@ -36,19 +38,13 @@ export const Login = () => {
   };
 
   return (
-    <View>
+    <Box>
       <ImageBackground
         source={{
           uri: 'https://res.cloudinary.com/dahw1d9li/image/upload/v1692434627/backgroundscreen_dv5tcz.png',
         }}
         style={{width: '100%', height: '100%'}}>
-        <View
-          style={{
-            gap: 20,
-            flex: 1,
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}>
+        <Stack space={20} align="center" style={{alignItems: 'center'}}>
           <TextInput
             placeholder="아이디를 입력하세요."
             value={id}
@@ -112,8 +108,8 @@ export const Login = () => {
           {errorMessage ? (
             <Text style={{color: 'red'}}>{errorMessage}</Text>
           ) : null}
-        </View>
+        </Stack>
       </ImageBackground>
-    </View>
+    </Box>
   );
 };

@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {View} from 'react-native';
+import {SafeAreaView} from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
 import {Login} from './screen';
 
@@ -15,8 +15,8 @@ export default function App() {
   });
 
   return (
-    <View>
+    <SafeAreaView>
       <Login />
-    </View>
+    </SafeAreaView>
   );
 }
