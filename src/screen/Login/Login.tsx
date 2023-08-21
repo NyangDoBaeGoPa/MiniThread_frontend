@@ -1,3 +1,4 @@
+import {useNavigation, useRoute} from '@react-navigation/native';
 import React, {useState} from 'react';
 import {
   ImageBackground,
@@ -12,7 +13,10 @@ interface FocusedInput {
   password: boolean;
 }
 
-export const Login = ({navigation}: any) => {
+export const Login = () => {
+  const navigation = useNavigation();
+  const route = useRoute();
+
   const [id, setId] = useState('');
   const [password, setPassword] = useState('');
   const [focusedInput, setFocusedInput] = useState<FocusedInput | null>(null);
