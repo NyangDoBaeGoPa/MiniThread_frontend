@@ -1,9 +1,7 @@
 import React, {useEffect} from 'react';
 import {View} from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
-import Sign from './pages/Sign';
-//import {StacksProvider} from '@mobily/stacks';
-import {HomeScreen} from './screen/Home/home.screen';
+import Login from './src/screen/Login/Login';
 export default function App() {
   useEffect(() => {
     try {
@@ -17,7 +15,7 @@ export default function App() {
 
   return (
     <View>
-      <HomeScreen />
+      <Login />
     </View>
   );
 }
