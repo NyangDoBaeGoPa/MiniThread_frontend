@@ -3,6 +3,7 @@ import {Box, StacksProvider} from '@mobily/stacks';
 import SplashScreen from 'react-native-splash-screen';
 import {Login} from './screen/Login/Login';
 import {Upload} from './screen/Upload';
+import {HomeScreen} from './screen/Home';
 
 export default function App() {
   useEffect(() => {

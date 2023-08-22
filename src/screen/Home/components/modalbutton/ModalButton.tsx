@@ -1,5 +1,6 @@
+import {Box} from '@mobily/stacks';
 import React from 'react';
-import {View, Text} from 'react-native';
+import {Text} from 'react-native';
 
 type ModalButtonPropsType = {
   title: string;
@@ -7,16 +8,16 @@ type ModalButtonPropsType = {
 };
 export const ModalButton = (props: ModalButtonPropsType) => {
   return (
-    <View
+    <Box
       style={{
         width: 220,
         height: 40,
         backgroundColor: props.color,
-        alignItems: 'center',
-        justifyContent: 'center',
         borderRadius: 20,
-      }}>
+      }}
+      alignX={'center'}
+      alignY={'center'}>
       <Text style={{color: '#FFFFFF'}}>{props.title}</Text>
-    </View>
+    </Box>
   );
 };
