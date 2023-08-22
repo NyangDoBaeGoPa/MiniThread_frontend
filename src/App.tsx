@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import {SafeAreaView} from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
 import {Login} from './screen';
+import {HomeScreen} from './screen/Home';
 
 export default function App() {
   useEffect(() => {
@@ -16,7 +17,7 @@ export default function App() {
 
   return (
     <SafeAreaView>
-      <Login />
+      <HomeScreen />
     </SafeAreaView>
   );
 }

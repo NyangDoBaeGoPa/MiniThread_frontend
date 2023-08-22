@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
-import {View, Modal, Pressable} from 'react-native';
-import {ModalButton} from '../../components';
+import React from 'react';
+import {Modal, Pressable} from 'react-native';
+import {Box} from '@mobily/stacks';
 
 type ModalComponentPropsType = {
   showModal: boolean;
@@ -9,7 +9,7 @@ type ModalComponentPropsType = {
 };
 export const ModalComponent = (props: ModalComponentPropsType) => {
   return props.showModal ? (
-    <View style={{backgroundColor: 'rgba(0,0,0, 0.5)'}}>
+    <Box style={{backgroundColor: 'rgba(0,0,0, 0.5)'}}>
       <Modal
         animationType="fade"
         transparent={true}
@@ -25,9 +25,9 @@ export const ModalComponent = (props: ModalComponentPropsType) => {
             backgroundColor: 'rgba(0,0,0, 0.5)',
           }}
           onPress={() => props.setShowModal(!props.showModal)}>
-          <View style={{marginBottom: 20}}>{props.children}</View>
+          <Box paddingBottom={5}>{props.children}</Box>
         </Pressable>
       </Modal>
-    </View>
+    </Box>
   ) : null;
 };

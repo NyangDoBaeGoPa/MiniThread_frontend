@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
-import {View, Image, TouchableOpacity} from 'react-native';
-import {PlusImage} from '../../const';
+import {TouchableOpacity} from 'react-native';
 import {ModalComponent} from '../Modal';
 import {ModalButton} from '../../components';
-import {Stack} from '@mobily/stacks';
+import {Box, Stack} from '@mobily/stacks';
+import Icon from 'react-native-vector-icons/Entypo';
 export const Footer = () => {
   const [showModal, setShowModal] = useState(false);
   const openModal = () => {
@@ -11,21 +11,15 @@ export const Footer = () => {
   };
 
   return (
-    <View
+    <Box
       style={{
-        flex: 0.09,
         backgroundColor: '#F2EBE5',
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}>
+      }}
+      alignX={'center'}
+      alignY={'center'}
+      padding={4}>
       <TouchableOpacity onPress={openModal}>
-        <Image
-          source={PlusImage}
-          style={{
-            width: 24,
-            height: 24,
-          }}
-        />
+        <Icon name="plus" size={30} />
         <ModalComponent showModal={showModal} setShowModal={setShowModal}>
           <Stack space={5}>
             <ModalButton color="#E58634" title="갤러리에서 선택"></ModalButton>
@@ -33,6 +27,6 @@ export const Footer = () => {
           </Stack>
         </ModalComponent>
       </TouchableOpacity>
-    </View>
+    </Box>
   );
 };

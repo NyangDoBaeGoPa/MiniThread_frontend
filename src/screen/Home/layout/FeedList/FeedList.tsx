@@ -1,21 +1,16 @@
 import React from 'react';
-import {View, FlatList, Text} from 'react-native';
+import {FlatList, Text} from 'react-native';
 import {SampleFeedData} from '../../const';
 import {Photo} from '../../components';
-type SampleFeedDataType = {
-  id: number;
-  user: string;
-  date: string;
-  content: string;
-  image: URL;
-};
+import {Box} from '@mobily/stacks';
+
 const EndofList = () => {
   return (
-    <View style={{height: 100, alignItems: 'center', justifyContent: 'center'}}>
+    <Box style={{height: 100}} alignX={'center'} alignY={'center'}>
       <Text style={{color: '#000000', fontSize: 10, fontWeight: '400'}}>
         더 이상 불러올 게시물이 없습니다.
       </Text>
-    </View>
+    </Box>
   );
 };
 const renderItem = ({item}) => {
@@ -34,7 +29,7 @@ export const FeedList = () => {
     <FlatList
       data={SampleFeedData}
       renderItem={renderItem}
-      ItemSeparatorComponent={() => <View style={{height: 40}} />}
+      ItemSeparatorComponent={() => <Box paddingY={10} />}
       ListFooterComponent={EndofList}
     />
   );
