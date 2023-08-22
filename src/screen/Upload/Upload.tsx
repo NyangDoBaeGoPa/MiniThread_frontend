@@ -3,6 +3,7 @@ import {Header} from '@react-navigation/stack';
 import React from 'react';
 import {ImageBackground, Pressable, Text, TextInput} from 'react-native';
 
+// fdsfsdf w f
 export const Upload = () => {
   return (
     <Box>
