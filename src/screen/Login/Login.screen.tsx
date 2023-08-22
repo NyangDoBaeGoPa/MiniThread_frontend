@@ -9,7 +9,7 @@ interface FocusedInput {
   password: boolean;
 }
 
-export const Login = () => {
+export const LoginScreen = () => {
   /* const navigation = useNavigation();
   const route = useRoute(); */
 

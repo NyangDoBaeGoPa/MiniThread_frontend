@@ -1,8 +1,8 @@
 import React, {useEffect} from 'react';
 import {Box, StacksProvider} from '@mobily/stacks';
 import SplashScreen from 'react-native-splash-screen';
-import {Login} from './screen/Login/Login';
-import {Upload} from './screen/Upload';
+import {LoginScreen} from './screen/Login/Login.screen';
+import {UploadScreen} from './screen/Upload';
 import {HomeScreen} from './screen/Home';
 
 export default function App() {
@@ -18,7 +18,7 @@ export default function App() {
 
   return (
     <StacksProvider spacing={1}>
-      <Upload></Upload>
+      <UploadScreen />
     </StacksProvider>
   );
 }
