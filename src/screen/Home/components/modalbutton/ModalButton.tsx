@@ -1,10 +1,11 @@
 import {Box} from '@mobily/stacks';
 import React from 'react';
-import {Text} from 'react-native';
+import {Pressable, Text} from 'react-native';
 
 type ModalButtonPropsType = {
   title: string;
   color: string;
+  onPress: () => void;
 };
 export const ModalButton = (props: ModalButtonPropsType) => {
   return (
@@ -17,7 +18,9 @@ export const ModalButton = (props: ModalButtonPropsType) => {
       }}
       alignX={'center'}
       alignY={'center'}>
-      <Text style={{color: '#FFFFFF'}}>{props.title}</Text>
+      <Pressable onPress={props.onPress}>
+        <Text style={{color: '#FFFFFF'}}>{props.title}</Text>
+      </Pressable>
     </Box>
   );
 };

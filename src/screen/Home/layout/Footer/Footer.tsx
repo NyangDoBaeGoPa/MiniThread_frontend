@@ -32,8 +32,14 @@ export const Footer = () => {
         <Icon name="plus" size={30} />
         <ModalComponent showModal={showModal} setShowModal={setShowModal}>
           <Stack space={5}>
-            <ModalButton color="#E58634" title="갤러리에서 선택"></ModalButton>
-            <ModalButton color="#000000" title="촬영하기"></ModalButton>
+            <ModalButton
+              onPress={handleGallerySelection}
+              color="#E58634"
+              title="갤러리에서 선택"></ModalButton>
+            <ModalButton
+              onPress={handleGallerySelection}
+              color="#000000"
+              title="촬영하기"></ModalButton>
           </Stack>
         </ModalComponent>
       </TouchableOpacity>
