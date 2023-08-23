@@ -1,17 +1,20 @@
-import {useNavigation, useRoute} from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {ImageBackground, Pressable, Text, TextInput, Alert} from 'react-native';
 import {Box, Stack} from '@mobily/stacks';
 import {useLoginScreenData} from './login.hook';
-
+import {StackNavigationProp} from '@react-navigation/stack';
+import {HomeScreen} from '../Home';
+import {RootStackParamList} from '../../App';
 interface FocusedInput {
   id: boolean;
   password: boolean;
 }
 
 export const LoginScreen = () => {
-  /* const navigation = useNavigation();
-  const route = useRoute(); */
+  const navigation =
+    useNavigation<StackNavigationProp<RootStackParamList, 'Home'>>();
+  // const route = useRoute();
 
   const {
     id,
@@ -28,7 +31,7 @@ export const LoginScreen = () => {
   const handleLogin = () => {
     // login api
     Alert.alert('로그인 성공', '환영합니다');
-
+    navigation.navigate('Home');
     /*  if (canLogin) {
       navigation.navigate('Main');
     } else {

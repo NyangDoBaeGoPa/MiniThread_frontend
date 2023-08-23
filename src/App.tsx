@@ -4,6 +4,15 @@ import SplashScreen from 'react-native-splash-screen';
 import {LoginScreen} from './screen/Login/Login.screen';
 import {UploadScreen} from './screen/Upload';
 import {HomeScreen} from './screen/Home';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {NavigationContainer} from '@react-navigation/native';
+
+export type RootStackParamList = {
+  Login: undefined;
+  Home: undefined;
+  Upload: undefined;
+};
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export default function App() {
   useEffect(() => {
@@ -17,8 +26,14 @@ export default function App() {
   });
 
   return (
-    <StacksProvider spacing={1}>
-      <UploadScreen />
-    </StacksProvider>
+    <NavigationContainer>
+      <StacksProvider spacing={1}>
+        <Stack.Navigator initialRouteName="Login">
+          <Stack.Screen name="Login" component={LoginScreen} />
+          <Stack.Screen name="Home" component={HomeScreen} />
+          <Stack.Screen name="Upload" component={UploadScreen} />
+        </Stack.Navigator>
+      </StacksProvider>
+    </NavigationContainer>
   );
 }

@@ -4,10 +4,20 @@ import {ModalComponent} from '../Modal';
 import {ModalButton} from '../../components';
 import {Box, Stack} from '@mobily/stacks';
 import Icon from 'react-native-vector-icons/Entypo';
+import {useNavigation} from '@react-navigation/native';
+import {StackNavigationProp} from '@react-navigation/stack';
+import {RootStackParamList} from '../../../../App';
+
 export const Footer = () => {
   const [showModal, setShowModal] = useState(false);
   const openModal = () => {
     setShowModal(prev => !prev);
+  };
+  const navigation =
+    useNavigation<StackNavigationProp<RootStackParamList, 'Upload'>>();
+  const handleGallerySelection = () => {
+    setShowModal(false);
+    navigation.navigate('Upload');
   };
 
   return (

@@ -4,8 +4,10 @@ import React from 'react';
 import {ImageBackground, Pressable, Text, TextInput} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import {useUploadScreenData} from './upload.hook';
+import {useNavigation} from '@react-navigation/native';
 
 export const UploadScreen = () => {
+  const navigation = useNavigation();
   const {content, handleUploadInput} = useUploadScreenData();
   return (
     <Box>
@@ -19,7 +21,10 @@ export const UploadScreen = () => {
           paddingX={24}
           style={{backgroundColor: '#E4DCD5'}}>
           <Column width={'content'}>
-            <Pressable>
+            <Pressable
+              onPress={() => {
+                navigation.goBack();
+              }}>
               <Icon name="close" size={30} color="black" />
             </Pressable>
           </Column>
