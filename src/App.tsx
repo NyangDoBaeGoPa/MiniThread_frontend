@@ -1,7 +1,9 @@
 import React, {useEffect} from 'react';
-import {SafeAreaView} from 'react-native';
+import {Box, StacksProvider} from '@mobily/stacks';
 import SplashScreen from 'react-native-splash-screen';
-import {Login} from './screen';
+import {LoginScreen} from './screen/Login/Login.screen';
+import {UploadScreen} from './screen/Upload';
+import {HomeScreen} from './screen/Home';
 
 export default function App() {
   useEffect(() => {
@@ -15,8 +17,8 @@ export default function App() {
   });
 
   return (
-    <SafeAreaView>
-      <Login />
-    </SafeAreaView>
+    <StacksProvider spacing={1}>
+      <UploadScreen />
+    </StacksProvider>
   );
 }
