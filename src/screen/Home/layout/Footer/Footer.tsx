@@ -1,24 +1,23 @@
-import React, {useState} from 'react';
-import {TouchableOpacity} from 'react-native';
+import React from 'react';
+import {FlatList, Image, Text, TouchableOpacity} from 'react-native';
 import {ModalComponent} from '../Modal';
 import {ModalButton} from '../../components';
 import {Box, Stack} from '@mobily/stacks';
 import Icon from 'react-native-vector-icons/Entypo';
-import {useNavigation} from '@react-navigation/native';
-import {StackNavigationProp} from '@react-navigation/stack';
-import {RootStackParamList} from '../../../../App';
+import {useFooterData} from './footer.hook';
 
 export const Footer = () => {
-  const [showModal, setShowModal] = useState(false);
-  const openModal = () => {
-    setShowModal(prev => !prev);
-  };
-  const navigation =
-    useNavigation<StackNavigationProp<RootStackParamList, 'Upload'>>();
-  const handleGallerySelection = () => {
-    setShowModal(false);
-    navigation.navigate('Upload');
-  };
+  const {
+    showModal,
+    setShowModal,
+    selectedPhotos,
+    photos,
+    handlePhotoPress,
+    openModal,
+    handleGallerySelection,
+    handleSelectionDone,
+    navigation,
+  } = useFooterData();
 
   return (
     <Box
@@ -30,19 +29,63 @@ export const Footer = () => {
       padding={4}>
       <TouchableOpacity onPress={openModal}>
         <Icon name="plus" size={30} />
-        <ModalComponent showModal={showModal} setShowModal={setShowModal}>
-          <Stack space={5}>
-            <ModalButton
-              onPress={handleGallerySelection}
-              color="#E58634"
-              title="갤러리에서 선택"></ModalButton>
-            <ModalButton
-              onPress={handleGallerySelection}
-              color="#000000"
-              title="촬영하기"></ModalButton>
-          </Stack>
-        </ModalComponent>
       </TouchableOpacity>
+      <ModalComponent showModal={showModal} setShowModal={setShowModal}>
+        <Stack space={5}>
+          <ModalButton
+            onPress={handleGallerySelection}
+            color="#E58634"
+            title="갤러리에서 선택"
+          />
+          <ModalButton
+            onPress={() => {
+              setShowModal(false);
+              navigation.navigate('Upload');
+            }}
+            color="#000000"
+            title="촬영하기"
+          />
+        </Stack>
+        {showModal && (
+          <Stack space={5}>
+            <FlatList
+              data={photos.edges}
+              keyExtractor={item => item.node.image.uri}
+              numColumns={3}
+              renderItem={({item}) => (
+                <TouchableOpacity
+                  onPress={() => handlePhotoPress(item.node.image.uri)}
+                  style={{
+                    width: 100,
+                    height: 100,
+                    margin: 5,
+                    borderWidth: 2,
+                    borderColor: selectedPhotos.includes(item.node.image.uri)
+                      ? '#E58634'
+                      : 'transparent',
+                  }}>
+                  <Image
+                    source={{uri: item.node.image.uri}}
+                    style={{width: '100%', height: '100%'}}
+                  />
+                </TouchableOpacity>
+              )}
+            />
+            <TouchableOpacity
+              onPress={handleSelectionDone}
+              style={{
+                backgroundColor: '#E58634',
+                padding: 10,
+                borderRadius: 5,
+                alignItems: 'center',
+              }}>
+              <Text style={{color: 'white', fontWeight: 'bold'}}>
+                선택 완료
+              </Text>
+            </TouchableOpacity>
+          </Stack>
+        )}
+      </ModalComponent>
     </Box>
   );
 };
