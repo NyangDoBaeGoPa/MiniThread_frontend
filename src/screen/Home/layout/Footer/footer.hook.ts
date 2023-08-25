@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import {useCameraRoll} from '@react-native-camera-roll/camera-roll';
+
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {RootStackParamList} from '../../../../App';
