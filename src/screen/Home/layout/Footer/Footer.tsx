@@ -1,5 +1,5 @@
 import React from 'react';
-import {FlatList, Image, Text, TouchableOpacity} from 'react-native';
+import {Text, TouchableOpacity} from 'react-native';
 import {ModalComponent} from '../Modal';
 import {ModalButton} from '../../components';
 import {Box, Stack} from '@mobily/stacks';
@@ -10,8 +10,6 @@ export const Footer = () => {
   const {
     showModal,
     setShowModal,
-    selectedPhotos,
-    photos,
     handlePhotoPress,
     openModal,
     handleGallerySelection,
@@ -48,7 +46,7 @@ export const Footer = () => {
         </Stack>
         {showModal && (
           <Stack space={5}>
-            <FlatList
+            {/* <FlatList
               data={photos.edges}
               keyExtractor={item => item.node.image.uri}
               numColumns={3}
@@ -70,7 +68,7 @@ export const Footer = () => {
                   />
                 </TouchableOpacity>
               )}
-            />
+            /> */}
             <TouchableOpacity
               onPress={handleSelectionDone}
               style={{

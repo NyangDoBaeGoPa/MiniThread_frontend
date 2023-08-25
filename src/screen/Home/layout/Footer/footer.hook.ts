@@ -3,11 +3,11 @@ import {useState} from 'react';
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {RootStackParamList} from '../../../../App';
+import {launchImageLibrary} from 'react-native-image-picker';
 
 export const useFooterData = () => {
   const [showModal, setShowModal] = useState(false);
   const [selectedPhotos, setSelectedPhotos] = useState<string[]>([]);
-  const [photos, getPhotos] = useCameraRoll();
 
   const navigation =
     useNavigation<StackNavigationProp<RootStackParamList, 'Upload'>>();
@@ -26,7 +26,7 @@ export const useFooterData = () => {
 
   const handleGallerySelection = () => {
     setShowModal(true);
-    getPhotos({first: 50, assetType: 'Photos'});
+    launchImageLibrary({mediaType: 'photo'});
   };
 
   const handleSelectionDone = () => {
@@ -38,7 +38,6 @@ export const useFooterData = () => {
     showModal,
     setShowModal,
     selectedPhotos,
-    photos,
     handlePhotoPress,
     openModal,
     handleGallerySelection,
