@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, TouchableOpacity} from 'react-native';
+import {FlatList, Image, Text, TouchableOpacity} from 'react-native';
 import {ModalComponent} from '../Modal';
 import {ModalButton} from '../../components';
 import {Box, Stack} from '@mobily/stacks';
@@ -10,9 +10,10 @@ export const Footer = () => {
   const {
     showModal,
     setShowModal,
-    handlePhotoPress,
+    selectedPhotos,
     openModal,
     handleGallerySelection,
+    handleCameraSelection,
     handleSelectionDone,
     navigation,
   } = useFooterData();
@@ -36,41 +37,23 @@ export const Footer = () => {
             title="갤러리에서 선택"
           />
           <ModalButton
-            onPress={() => {
-              setShowModal(false);
-              navigation.navigate('Upload');
-            }}
+            onPress={handleCameraSelection}
             color="#000000"
             title="촬영하기"
           />
         </Stack>
-        {showModal && (
+        {selectedPhotos.length > 0 && (
           <Stack space={5}>
-            {/* <FlatList
-              data={photos.edges}
-              keyExtractor={item => item.node.image.uri}
+            <FlatList
+              data={selectedPhotos}
+              keyExtractor={item => item}
               numColumns={3}
               renderItem={({item}) => (
-                <TouchableOpacity
-                  onPress={() => handlePhotoPress(item.node.image.uri)}
-                  style={{
-                    width: 100,
-                    height: 100,
-                    margin: 5,
-                    borderWidth: 2,
-                    borderColor: selectedPhotos.includes(item.node.image.uri)
-                      ? '#E58634'
-                      : 'transparent',
-                  }}>
-                  <Image
-                    source={{uri: item.node.image.uri}}
-                    style={{width: '100%', height: '100%'}}
-                  />
-                </TouchableOpacity>
+                <Image source={{uri: item}} style={{width: 100, height: 100}} />
               )}
-            /> */}
+            />
             <TouchableOpacity
-              onPress={handleSelectionDone}
+              onPress={() => handleSelectionDone()}
               style={{
                 backgroundColor: '#E58634',
                 padding: 10,

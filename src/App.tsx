@@ -10,7 +10,7 @@ import {NavigationContainer} from '@react-navigation/native';
 export type RootStackParamList = {
   Login: undefined;
   Home: undefined;
-  Upload: undefined;
+  Upload: {photos: string[]};
 };
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
