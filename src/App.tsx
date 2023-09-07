@@ -1,11 +1,12 @@
+import { StacksProvider} from '@mobily/stacks';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React, {useEffect} from 'react';
-import {Box, StacksProvider} from '@mobily/stacks';
 import SplashScreen from 'react-native-splash-screen';
+
+import {HomeScreen} from './screen/Home';
 import {LoginScreen} from './screen/Login/Login.screen';
 import {UploadScreen} from './screen/Upload';
-import {HomeScreen} from './screen/Home';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {NavigationContainer} from '@react-navigation/native';
 
 export type RootStackParamList = {
   Login: undefined;

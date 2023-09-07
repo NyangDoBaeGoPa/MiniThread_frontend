@@ -5,7 +5,7 @@
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
-    "lint": "eslint",
+    "lint": "eslint \"**/*.{ts,tsx}\" --fix",
     "start": "react-native start --reset-cache",
     "test": "jest",
     "prepare": "husky install"
@@ -20,6 +20,7 @@
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
     "dayjs": "^1.11.9",
+    "eslint-plugin-unused-imports": "^3.0.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.3",
     "mobx-persist": "^0.4.1",
@@ -75,7 +76,7 @@
     "eslint": "8.2.0",
     "eslint-config-airbnb": "19.0.4",
     "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-import": "2.25.3",
+    "eslint-plugin-import": "^2.28.1",
     "eslint-plugin-jsx-a11y": "6.5.1",
     "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-react": "7.28.0",

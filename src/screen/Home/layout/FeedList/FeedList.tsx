@@ -1,8 +1,9 @@
+import {Box} from '@mobily/stacks';
 import React from 'react';
 import {FlatList, Text} from 'react-native';
-import {SampleFeedData} from '../../const';
+
 import {Photo} from '../../components';
-import {Box} from '@mobily/stacks';
+import {SampleFeedData} from '../../const';
 
 const EndofList = () => {
   return (

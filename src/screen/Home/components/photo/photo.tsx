@@ -1,9 +1,11 @@
-import {Text, Image, TouchableOpacity} from 'react-native';
+import {Box, Rows, Stack, Columns, Column} from '@mobily/stacks';
 import React, {useState} from 'react';
+import {Text, Image, TouchableOpacity} from 'react-native';
+import Icon from 'react-native-vector-icons/Entypo';
+
 import {ModalComponent} from '../../layout';
 import {ModalButton} from '../modalbutton';
-import {Box, Rows, Stack, Columns, Column} from '@mobily/stacks';
-import Icon from 'react-native-vector-icons/Entypo';
+
 
 type SampleFeedDataType = {
   id: number;

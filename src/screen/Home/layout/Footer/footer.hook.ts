@@ -1,9 +1,11 @@
-import {useState} from 'react';
 
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
-import {RootStackParamList} from '../../../../App';
+import {useState} from 'react';
 import ImagePicker from 'react-native-image-crop-picker';
+
+import {RootStackParamList} from '../../../../App';
+
 
 export const useFooterData = () => {
   const [showModal, setShowModal] = useState(false);

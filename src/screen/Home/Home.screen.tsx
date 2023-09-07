@@ -1,8 +1,9 @@
+import {Row, Rows} from '@mobily/stacks';
 import React from 'react';
 import {ImageBackground} from 'react-native';
+
 import {bgImageURL} from './const';
 import {FeedList, Footer} from './layout';
-import {Row, Rows} from '@mobily/stacks';
 
 export const HomeScreen = () => {
   return (

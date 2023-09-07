@@ -1,6 +1,6 @@
+import {Box} from '@mobily/stacks';
 import React from 'react';
 import {Modal, Pressable} from 'react-native';
-import {Box} from '@mobily/stacks';
 
 type ModalComponentPropsType = {
   showModal: boolean;
