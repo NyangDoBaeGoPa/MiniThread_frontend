@@ -1,13 +1,11 @@
 import {Box, Stack} from '@mobily/stacks';
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
-import React from 'react';
 import {ImageBackground, Pressable, Text, TextInput, Alert} from 'react-native';
 
 import {RootStackParamList} from '../../App';
 
 import {useLoginScreenData} from './login.hook';
-
 
 interface FocusedInput {
   id: boolean;

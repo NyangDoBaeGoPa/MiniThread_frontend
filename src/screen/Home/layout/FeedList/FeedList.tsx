@@ -1,5 +1,4 @@
 import {Box} from '@mobily/stacks';
-import React from 'react';
 import {FlatList, Text} from 'react-native';
 
 import {Photo} from '../../components';

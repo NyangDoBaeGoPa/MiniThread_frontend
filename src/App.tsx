@@ -1,7 +1,7 @@
-import { StacksProvider} from '@mobily/stacks';
+import {StacksProvider} from '@mobily/stacks';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import React, {useEffect} from 'react';
+import {useEffect} from 'react';
 import SplashScreen from 'react-native-splash-screen';
 
 import {HomeScreen} from './screen/Home';

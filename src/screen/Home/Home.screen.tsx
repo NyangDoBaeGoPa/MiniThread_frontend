@@ -1,5 +1,4 @@
 import {Row, Rows} from '@mobily/stacks';
-import React from 'react';
 import {ImageBackground} from 'react-native';
 
 import {bgImageURL} from './const';

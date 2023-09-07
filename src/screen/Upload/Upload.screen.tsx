@@ -1,6 +1,5 @@
 import {Box, Column, Columns, Stack} from '@mobily/stacks';
 import {useNavigation} from '@react-navigation/native';
-import React from 'react';
 import {ImageBackground, Pressable, Text, TextInput} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 

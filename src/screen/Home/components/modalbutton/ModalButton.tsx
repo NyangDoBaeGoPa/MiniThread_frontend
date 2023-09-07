@@ -1,5 +1,4 @@
 import {Box} from '@mobily/stacks';
-import React from 'react';
 import {Pressable, Text} from 'react-native';
 
 type ModalButtonPropsType = {

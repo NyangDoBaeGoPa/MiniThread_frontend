@@ -1,5 +1,4 @@
 import {Box, Stack} from '@mobily/stacks';
-import React from 'react';
 import {FlatList, Image, Text, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/Entypo';
 
