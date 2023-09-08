@@ -1,5 +1,13 @@
 {
   "extends": "@tsconfig/react-native/tsconfig.json",
   "lint": "eslint --ext .ts --ext .tsx ./src --fix",
-  "compilerOptions": {"jsx": "react-jsx"}
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "paths": {
+      "@/atoms": ["./src/atoms"],
+      "@/atoms/*": ["./src/atoms/*"],
+      "@/providers": ["./src/providers"],
+      "@/providers/*": ["./src/providers/*"]
+    },
+  }
 }

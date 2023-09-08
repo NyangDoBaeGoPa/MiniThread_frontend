@@ -1,8 +1,9 @@
-import {StacksProvider} from '@mobily/stacks';
 import {useEffect} from 'react';
 import SplashScreen from 'react-native-splash-screen';
 
 import {RootNavigator} from './screen';
+
+import {UIProvider} from '@/providers';
 
 export type RootStackParamList = {
   Login: undefined;
@@ -22,8 +23,8 @@ export const App = () => {
   });
 
   return (
-    <StacksProvider spacing={1}>
+    <UIProvider>
       <RootNavigator />
-    </StacksProvider>
+    </UIProvider>
   );
 };
