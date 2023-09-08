@@ -2,13 +2,13 @@ import {Box, Stack} from '@mobily/stacks';
 import {RouteProp, useNavigation, useRoute} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {FormProvider} from 'react-hook-form';
-import {ImageBackground, Pressable, Text, TextInput, Alert} from 'react-native';
+import {ImageBackground, Pressable, Text, Alert} from 'react-native';
 
 import {RootStackParamList} from '../root.navigator';
 
 import {useLoginForm} from './hooks';
 import {useLoginScreenData} from './login.hook';
-import {LoginIdInputModule} from './modules';
+import {LoginIdInputModule, LoginPasswordInputModule} from './modules';
 
 type LoginScreenProps = {};
 
@@ -58,26 +58,7 @@ export const LoginScreen = ({}: LoginScreenProps) => {
             space={20}
             style={{height: '100%', justifyContent: 'center'}}>
             <LoginIdInputModule />
-            <TextInput
-              placeholder="비밀번호를 입력하세요."
-              value={password}
-              secureTextEntry
-              onFocus={() => handleFocusedInput({id: false, password: true})}
-              onBlur={() => handleFocusedInput(null)}
-              onChangeText={handlePasswordInput}
-              placeholderTextColor="#AAAAAA"
-              style={{
-                width: '100%',
-                textAlign: 'center',
-                backgroundColor: 'white',
-                borderRadius: 20,
-                paddingHorizontal: 40,
-                paddingVertical: 16,
-                fontSize: 12,
-                borderColor: focusedInput?.password ? '#E58634' : 'white',
-                borderWidth: 1,
-              }}
-            />
+            <LoginPasswordInputModule />
             <Box alignX="center" direction="row">
               <Pressable
                 onPress={handleLogin}
