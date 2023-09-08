@@ -13,6 +13,7 @@ module.exports = {
   },
   rules: {
     'unused-imports/no-unused-imports': 'error',
+    'import/no-default-export': 'error',
     'import/order': [
       1,
       {
