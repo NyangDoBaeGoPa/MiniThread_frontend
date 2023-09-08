@@ -5,6 +5,7 @@ import {ImageBackground, Pressable, Text, TextInput, Alert} from 'react-native';
 
 import {RootStackParamList} from '../root.navigator';
 
+import {useLoginForm} from './hooks';
 import {useLoginScreenData} from './login.hook';
 
 type LoginScreenProps = {};
@@ -22,6 +23,8 @@ export type LoginScreenNavigationRouteProps = RouteProp<
 export const LoginScreen = ({}: LoginScreenProps) => {
   const navigation = useNavigation<LoginScreenNavigationProps>();
   const route = useRoute<LoginScreenNavigationRouteProps>();
+
+  const {} = useLoginForm();
 
   const {
     id,

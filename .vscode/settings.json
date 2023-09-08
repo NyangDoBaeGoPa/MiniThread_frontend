@@ -1,6 +1,4 @@
 {
-    "java.configuration.updateBuildConfiguration": "interactive",
-    "cSpell.words": [
-        "mobily"
-    ]
+  "java.configuration.updateBuildConfiguration": "interactive",
+  "cSpell.words": ["hookform", "mobily"]
 }
