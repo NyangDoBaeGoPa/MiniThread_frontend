@@ -5,12 +5,6 @@ import {RootNavigator} from './screen';
 
 import {UIProvider} from '@/providers';
 
-export type RootStackParamList = {
-  Login: undefined;
-  Home: undefined;
-  Upload: {photos: string[]};
-};
-
 export const App = () => {
   useEffect(() => {
     try {

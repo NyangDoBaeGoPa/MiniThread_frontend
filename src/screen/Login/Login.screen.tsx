@@ -1,21 +1,27 @@
 import {Box, Stack} from '@mobily/stacks';
-import {useNavigation} from '@react-navigation/native';
+import {RouteProp, useNavigation, useRoute} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {ImageBackground, Pressable, Text, TextInput, Alert} from 'react-native';
 
-import {RootStackParamList} from '../../App';
+import {RootStackParamList} from '../root.navigator';
 
 import {useLoginScreenData} from './login.hook';
 
-interface FocusedInput {
-  id: boolean;
-  password: boolean;
-}
+type LoginScreenProps = {};
 
-export const LoginScreen = () => {
-  const navigation =
-    useNavigation<StackNavigationProp<RootStackParamList, 'Home'>>();
-  // const route = useRoute();
+export type LoginScreenNavigationProps = StackNavigationProp<
+  RootStackParamList,
+  'Login'
+>;
+
+export type LoginScreenNavigationRouteProps = RouteProp<
+  RootStackParamList,
+  'Login'
+>;
+
+export const LoginScreen = ({}: LoginScreenProps) => {
+  const navigation = useNavigation<LoginScreenNavigationProps>();
+  const route = useRoute<LoginScreenNavigationRouteProps>();
 
   const {
     id,
@@ -30,14 +36,8 @@ export const LoginScreen = () => {
   } = useLoginScreenData();
 
   const handleLogin = () => {
-    // login api
     Alert.alert('로그인 성공', '환영합니다');
     navigation.navigate('Home');
-    /*  if (canLogin) {
-      navigation.navigate('Main');
-    } else {
-      setErrorMessage('Invalid id or password');
-    };    */
   };
 
   return (

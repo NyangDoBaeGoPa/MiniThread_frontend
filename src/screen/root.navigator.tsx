@@ -5,12 +5,13 @@ import {HomeScreen} from './Home';
 import {LoginScreen} from './Login';
 import {UploadScreen} from './Upload';
 
-type RootNavigatorProps = {};
-type RootStackParamList = {
+export type RootStackParamList = {
   Login: undefined;
   Home: undefined;
   Upload: {photos: string[]};
 };
+
+type RootNavigatorProps = {};
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
