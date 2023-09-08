@@ -1,10 +1,9 @@
-import {Box, Column, Columns, Row, Rows, Stack} from '@mobily/stacks';
-import {Header} from '@react-navigation/stack';
-import React from 'react';
+import {Box, Column, Columns, Stack} from '@mobily/stacks';
+import {useNavigation} from '@react-navigation/native';
 import {ImageBackground, Pressable, Text, TextInput} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+
 import {useUploadScreenData} from './upload.hook';
-import {useNavigation} from '@react-navigation/native';
 
 export const UploadScreen = () => {
   const navigation = useNavigation();
