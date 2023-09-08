@@ -1,10 +1,9 @@
 import {ReactNode} from 'react';
-import {Text as RNText} from 'react-native';
+import {Text as RNText, TextStyle} from 'react-native';
 
 type TextProps = {
   children: ReactNode;
-  style?: any;
-  // ... 다른 필요한 props들
+  style?: TextStyle;
 };
 
 export const Text = ({children, style, ...restProps}: TextProps) => {
