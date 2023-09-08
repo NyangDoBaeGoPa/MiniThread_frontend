@@ -1,9 +1,11 @@
 import {Stack} from '@mobily/stacks';
 import {memo, useState} from 'react';
 import {useFormContext, useController} from 'react-hook-form';
-import {TextInput, Text} from 'react-native';
+import {TextInput} from 'react-native';
 
 import {LoginForm} from '../../hooks';
+
+import {Text} from '@/atoms';
 
 export const LoginPasswordInputModule = memo(() => {
   const [isFocused, setIsFocused] = useState<boolean>(false);
@@ -17,8 +19,9 @@ export const LoginPasswordInputModule = memo(() => {
   return (
     <Stack space={4}>
       <TextInput
-        placeholder="아이디를 입력하세요."
+        placeholder="비밀번호를 입력하세요."
         value={value}
+        secureTextEntry
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
         onChangeText={onChange}
